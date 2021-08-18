@@ -1,15 +1,22 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import WordApp from "./components/WordApp";
+import Users from "./components/Users";
+import Footer from "./components/Footer/Footer";
+import AwardsModal from './components/Modal/AwardsModal'
 import { getRandomInd } from "./components/random";
-import words from "./data/data";
+
+import useStore from "./zustand/useStore";
+
+import ok from "./img/ok.png";
+import cross from "./img/cross.png";
 
 function App() {
-  const [points, setPoints] = useState(0);
-  const [series, setSeries] = useState(0);
-  const [correct, setCorrect] = useState(0);
-  const [id, setId] = useState(getRandomInd());
+  const loadUsers = useStore((state) => state.loadUsers);
+  const points = useStore((state) => state.points);
+  const answer = useStore((state) => state.answer);
+  const setNextId = useStore((state) => state.setNextId);
   const [usedQuestions, setUsedQuestions] = useState([]);
 
   function getQuestion() {
@@ -17,44 +24,31 @@ function App() {
     while (usedQuestions.includes(tempId)) {
       tempId = getRandomInd();
     }
-    setId(tempId);
+    setNextId(tempId);
     setUsedQuestions([...usedQuestions, tempId]);
-    if (usedQuestions.length === 20) {
+    if (usedQuestions.length === 30) {
       setUsedQuestions([]);
     }
     console.log(usedQuestions);
   }
+  useEffect(loadUsers, []);
 
   return (
     <div className="App">
-      <div className="container border">
+      <div className="container">
+        <AwardsModal />
         <div className="row">
           <div className="col m-1">
             <h2 className="alert alert-warning">Easy words</h2>
           </div>
         </div>
-        {/* <div className="row">
-          <div className="col col-sm white">
-            <p className="alert alert-success"> POINTS:{points}</p>
-          </div>
-          <div className="col col-sm white">
-            <p className="alert alert-success">
-              Run of luck:{series} Best series:{bestSeries}
-            </p>
-          </div>
-        </div> */}
 
         <div className="row">
           <div className="col m-1 d-flex justify-content-center">
-            <WordApp
-              id={id}
-              setPoints={setPoints}
-              points={points}
-              series={series}
-              setSeries={setSeries}
-              correct={correct}
-              setCorrect={setCorrect}
-            />
+            <Users />
+          </div>
+          <div className="col m-1 d-flex justify-content-center">
+            <WordApp />
           </div>
           <div className="col">
             <div className="col col-sm white mt-5 mb-5">
@@ -62,9 +56,18 @@ function App() {
             </div>
 
             <div className="col col-sm white mt-5 mb-5">
-              {correct!==0 &&
-              <p className="alert alert-light h1"> {correct ? 'OK' : 'WRONG'}</p>
-}
+              {/* {answer !== 0 && (
+                <p className="alert alert-light h1">
+                  {" "}
+                  {answer ? "OK" : "WRONG"}
+                </p>
+              )} */}
+              {answer !== 0 && (
+                <p>
+                  {" "}
+                  {answer ? <img src={ok}></img> : <img src={cross}></img>}
+                </p>
+              )}
             </div>
 
             <div className="col m-3">
@@ -78,10 +81,7 @@ function App() {
           </div>
         </div>
 
-        <footer className="white card-footer">
-          <p className="white">data base: {words.length}words</p>
-          <div class="text-center p-3">© 2021 Copyright: sławek jona</div>
-        </footer>
+        {/* <Footer /> */}
       </div>
     </div>
   );

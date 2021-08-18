@@ -9,14 +9,21 @@
   justify-content: center; */
   font-size: calc(3px + 2vmin);
 }
-.container{
-  min-height: 100vh;
-}
 
-.white{
-  color:aliceblue;
+.white {
+  color: aliceblue;
 }
-
+.card {
+  width: 18rem;
+}
+.author {
+  font-size: 2vh;
+  padding-top: 20px;
+}
+.award-img {
+  max-width: 30vw;
+  max-height:80vh;
+}
 /* 
 .App-header {
   background-color: #282c34;
