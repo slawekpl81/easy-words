@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/easy-words/static/css/main.c4cd00f1.chunk.css",
-    "main.js": "/easy-words/static/js/main.acaf62fd.chunk.js",
-    "main.js.map": "/easy-words/static/js/main.acaf62fd.chunk.js.map",
+    "main.js": "/easy-words/static/js/main.a1f53923.chunk.js",
+    "main.js.map": "/easy-words/static/js/main.a1f53923.chunk.js.map",
     "runtime-main.js": "/easy-words/static/js/runtime-main.2a8b4905.js",
     "runtime-main.js.map": "/easy-words/static/js/runtime-main.2a8b4905.js.map",
-    "static/js/2.f8b668ce.chunk.js": "/easy-words/static/js/2.f8b668ce.chunk.js",
-    "static/js/2.f8b668ce.chunk.js.map": "/easy-words/static/js/2.f8b668ce.chunk.js.map",
+    "static/js/2.b1592f39.chunk.js": "/easy-words/static/js/2.b1592f39.chunk.js",
+    "static/js/2.b1592f39.chunk.js.map": "/easy-words/static/js/2.b1592f39.chunk.js.map",
     "static/js/3.4f8ae289.chunk.js": "/easy-words/static/js/3.4f8ae289.chunk.js",
     "static/js/3.4f8ae289.chunk.js.map": "/easy-words/static/js/3.4f8ae289.chunk.js.map",
     "index.html": "/easy-words/index.html",
     "static/css/main.c4cd00f1.chunk.css.map": "/easy-words/static/css/main.c4cd00f1.chunk.css.map",
-    "static/js/2.f8b668ce.chunk.js.LICENSE.txt": "/easy-words/static/js/2.f8b668ce.chunk.js.LICENSE.txt"
+    "static/js/2.b1592f39.chunk.js.LICENSE.txt": "/easy-words/static/js/2.b1592f39.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2a8b4905.js",
-    "static/js/2.f8b668ce.chunk.js",
+    "static/js/2.b1592f39.chunk.js",
     "static/css/main.c4cd00f1.chunk.css",
-    "static/js/main.acaf62fd.chunk.js"
+    "static/js/main.a1f53923.chunk.js"
   ]
 }
