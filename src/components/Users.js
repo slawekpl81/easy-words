@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import useStore from "../zustand/useStore";
 
 import { v4 as uuidv4 } from 'uuid';
@@ -26,7 +26,7 @@ function Users() {
   };
   const handleRemoveUser = (event) => {
     event.preventDefault();
-    const removeId = parseInt(event.target.name);
+    const removeId = event.target.name;
     removeUser(removeId);
   };
 
@@ -54,9 +54,9 @@ function Users() {
       <p className="alert alert-danger h3">USERS:</p>
       {users.sort(sortUsers).map((user) => (
         <p key={getRandomId()}>
-          {users[0] === user && <img src={medal1}></img>}
-          {users[1] === user && <img src={medal2}></img>}
-          {users[2] === user && <img src={medal3}></img>}
+          {users[0] === user && <img src={medal1} alt={'gold medal'}/>}
+          {users[1] === user && <img src={medal2} alt={'silver medal'}/>}
+          {users[2] === user && <img src={medal3} alt={'bronze medal'}/>}
           <button
             className="btn btn-warning m-1"
             onClick={setUser}
@@ -76,12 +76,12 @@ function Users() {
       ))}
       <br />
       <input
-        className="form-control mt-3"
-        ref={myRef}
-        val={myRef.current.value}
-        placeholder="type your Name"
-        type="text"
-      ></input>
+    className="form-control mt-3"
+    ref={myRef}
+    // val={myRef.current.value}
+    placeholder="type your Name"
+    type="text"
+    />
       <button className="btn btn-info m-1" onClick={handleAddUser}>
         Add USER
       </button>

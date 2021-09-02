@@ -13,9 +13,9 @@ import { getRandomInd } from "../components/random";
 function getFromStorage() {
   try {
     // const tempUsers = JSON.parse(localStorage.getItem("users"));
-    const tempUsers = JSON.parse(localStorage.users);
-    console.log(tempUsers);
-    return tempUsers;
+    // const tempUsers = JSON.parse(localStorage.users);
+    // console.log(tempUsers);
+    return JSON.parse(localStorage.users)
   } catch (error) {
     return [];
   }

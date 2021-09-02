@@ -29,7 +29,7 @@ function App() {
     if (usedQuestions.length === 30) {
       setUsedQuestions([]);
     }
-    console.log(usedQuestions);
+    // console.log(usedQuestions);
   }
   useEffect(loadUsers, []);
 
@@ -65,7 +65,7 @@ function App() {
               {answer !== 0 && (
                 <p>
                   {" "}
-                  {answer ? <img src={ok}></img> : <img src={cross}></img>}
+                  {answer ? <img src={ok} alt={'ok'}/> : <img src={cross} alt={'failed'}/>}
                 </p>
               )}
             </div>
